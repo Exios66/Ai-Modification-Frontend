@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Response Adjustment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- Font Awesome for Theme Toggle Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHq6CUWlsI6vYI5ZmH5RJDvFooWu4H5X9tE6HfVx1R1FVrLUGO1M7qAdZkadAiPzBV5Kbb3A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Response Adjustment Tool</h1>
+            <button id="theme-toggle" aria-label="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <main>
+            <form id="assessment-form">
+                <h2>Preliminary Assessment Scores</h2>
+                
+                <div class="form-group">
+                    <label for="cognitive_bias_awareness">Cognitive Bias Awareness (0-100):</label>
+                    <input type="number" id="cognitive_bias_awareness" name="cognitive_bias_awareness" min="0" max="100" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="persuasion_receptivity">Persuasion Receptivity (0-100):</label>
+                    <input type="number" id="persuasion_receptivity" name="persuasion_receptivity" min="0" max="100" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="deception_susceptibility">Deception Susceptibility (0-100):</label>
+                    <input type="number" id="deception_susceptibility" name="deception_susceptibility" min="0" max="100" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="emotional_response_bias">Emotional Response Bias (0-100):</label>
+                    <input type="number" id="emotional_response_bias" name="emotional_response_bias" min="0" max="100" required>
+                </div>
+
+                <button type="submit" class="btn">Submit Assessment</button>
+            </form>
+
+            <section id="results" class="hidden">
+                <h2>Adjusted AI Response</h2>
+                <div id="ai-response">
+                    <!-- AI Response will be displayed here -->
+                </div>
+
+                <h2>Assigned User Group</h2>
+                <div id="user-group">
+                    <!-- User Group will be displayed here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
